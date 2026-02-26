@@ -1,9 +1,9 @@
 # Fantôme de la Vanille
 
-Type: Forensics
-Difficulté: Facile
-Auteur: 0sh4w077
-Team: 71M_R0CK373
+- Type: Forensics
+- Difficulté: Facile
+- Auteur: 0sh4w077
+- Team: 71M_R0CK373
 
 ## Déscription:
 
