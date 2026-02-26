@@ -25,7 +25,7 @@ frequences_malgaches.wav: RIFF (little-endian) data, WAVE audio, Microsoft PCM, 
 ```
 
 C'est un fichier audio WAV. De ce cÔté, tout est normal.
-Mais vu que c'est de l'audio, regargons du côté des spectrogram
+Mais vu que c'est de l'audio, regardons du côté du spectrogram
 
 ```bash
 $ sox frequences_malgaches.wav -n spectrogram -o out.png
