@@ -8,8 +8,8 @@
 ## Déscription:
 
 Un agent inﬁltré dans le réseau de la Réunion a transmis cette image avant de disparaître.
-> Les analystes pensent qu'un message critique est dissimulé à l'intérieur. > Ils ont trouvé
-quelque chose... mais ce n'était pas le bon message. > **Cherchez plus profondément
+Les analystes pensent qu'un message critique est dissimulé à l'intérieur. Ils ont trouvé
+quelque chose... mais ce n'était pas le bon message. **Cherchez plus profondément
 https://drive.google.com/ﬁle/d/1nVm7c7BNafW2_UIq74iRo3bgsWa7XPgo/view?
 usp=sharing.
 
@@ -22,7 +22,7 @@ $ file fantome_vanille.png
 ```
 
 Resultat:
----
+
 ```text
 fantome_vanille.png: PNG image data, 512 x 512, 8-bit/color RGB, non-interlaced
 ```
@@ -37,7 +37,7 @@ $ strings fantome_vanille.png | head -n 20
 ```
 
 Résultat:
----
+
 
 ```text
 IHDR
@@ -83,7 +83,6 @@ EOF
 ```
 
 Résultat:
----
 ```text
 XOR(flag, MD5(Author_metadata))
 
@@ -101,7 +100,7 @@ $ echo -n "OCOI2026" | md5sum
 ```
 
 Résultat:
----
+
 ```text
 8922828c40152a0a71bf082e5ab41d81  -
 
