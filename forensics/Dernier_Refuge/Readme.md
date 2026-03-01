@@ -126,7 +126,7 @@ print(f"Le Flag est : {result}")
 ---
 
 ```bash
-$ python3 lagon_noir.py
+$ python3 transmission_final.py
 ```
 
 Résultat:
