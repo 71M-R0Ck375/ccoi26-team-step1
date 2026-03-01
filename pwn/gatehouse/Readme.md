@@ -26,14 +26,14 @@ So first, let’s see what we have here.
 - dynamically linked
 - not stripped (symbols present)
 - No stack canary protection
-- No PIE enabled (fixed address when the binary is launched for local and remote)
+- No PIE enabled (fixed address)
 - Nx enabled (no shellcode)
 
 After that let’s check what does this binary and what vulnerability we may encounter.
 
 ![image.png](gatehouse/image%202.png)
 
-So from what we see, the binary just take some credential as input and print then some response.
+So from what we see, the binary just take some credential as input and print some response.
 
 But internally, we have:
 
@@ -77,6 +77,9 @@ undefined8 main(void)
 we have a main function where inside:
 
 - there is some buffer of 72 bytes where  we ‘ll put 0x100 bytes (256 bytes) of data. So eventually, it will cause a **stack buffer overflow.**
+
+![image.png](gatehouse/image%203.png)
+
 - there are two local variable (local_10 and local_c) and if the variable local_c == 0x1337 and local_10 == 0xc0ffee00, it will give use the flag. But there is no direct way to set these variable.
 
 ---
@@ -89,11 +92,11 @@ So from our enumeration, our goal in this challenge is to **overwrite the two lo
 
 **Exploit:**
 
-So first, we need to see at where are these two addresses and the buffer are located and calculated offset needed to get into these address.
+So first, we need to see where are these two addresses and the buffer are located and calculated offset needed to get into these address.
 
 1. Locate the local variable address
 
-![image.png](gatehouse/image%203.png)
+![image.png](gatehouse/image%204.png)
 
 As we can see, our buffer start at rbp - 0x50 and local_c is at rbp - 0x4, local_10 at rbp - 0x8
 
@@ -105,7 +108,7 @@ In our exploit, we ‘ll put 72  * ‘A’ + 0xc0ffee00 into 4 bytes little endi
 
 So using our ***exploit.py***, locally we can create a test flag and we get:
 
-![image.png](gatehouse/image%204.png)
+![image.png](gatehouse/image%205.png)
 
 But for the remote version we need to use ***remote*** instead of ***process*** inside of our script.
 
