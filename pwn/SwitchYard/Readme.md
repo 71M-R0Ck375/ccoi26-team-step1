@@ -3,7 +3,7 @@
 **About:**
 
 - Category: Pwn
-- Difficult: Medium
+- Difficulty: Medium
 
 **Subject:**
 
